@@ -28,13 +28,13 @@ void displayEmployee(Employee emp[],int n){
 }
 
 Employee findHighestSalary(Employee emp[],int n){
-    Employee MAX[1000];
+    Employee MAX;
     for (int i=0;i<n;i++){
         if(emp[i].salary>emp[i+1].salary){
-                MAX[i]=emp[i];
+                MAX=emp[i];
                 
         }
-        return MAX[i];
+        return MAX;
     }
 }
 
@@ -51,7 +51,7 @@ int main(){
 
     Employee highestSalariedEmployee=findHighestSalary(emp,employeeCount);
 
-    printf("highest salaried employee is: %s, %.2f (%s)\n",highestSalariedEmployee.name,highestSalariedEmployee.salary,highestSalariedEmployee.dept);
+    printf("highest salaried employee is: %s, %.2f [%s]\n",highestSalariedEmployee.name,highestSalariedEmployee.salary,highestSalariedEmployee.dept);
 
     return 0;
 }
