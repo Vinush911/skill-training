@@ -36,7 +36,7 @@ void addBook(){
     printf("enter the books number:");
     scanf("%d",&bookCount);
     for (int i=0;i<bookCount;i++){
-        printf("enter type of book: Fiction/NonFiction:");
+        printf("enter type of book: 1.Fiction 2.NonFiction:");
         scanf("%d",&books[i].type);
 
        switch(books[i].type){
@@ -58,8 +58,22 @@ void addBook(){
 }
 
 void displayBook(){
+    for (int i=0;i<bookCount;i++){
 
+        switch(books[i].type){
+                case 1:{
+                        printf("Fiction Book: %s Author: %s Price: $%.2f \n",books[i].booktype.fiction.title,books[i].booktype.fiction.author,
+                        books[i].booktype.fiction.price);
+                }break;
+
+                case 2:{
+                        printf("NonFiction Book: %s Subject: %s Price: $%.2f \n",books[i].booktype.fiction.title,books[i].booktype.fiction.author,
+                        books[i].booktype.fiction.price);
+                }break;
+        }
+    }
 }
+
 
 int main(){
     addBook();
