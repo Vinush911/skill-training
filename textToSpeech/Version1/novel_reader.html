@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Web Novel Reader</title>
+  <style>
+    body { font-family: Georgia, serif; line-height: 1.6; margin: 2rem; background: #fefefe; color: #333; }
+    #content { max-width: 800px; margin: auto; }
+    button { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+  <button onclick="nextChapter()">Next Chapter</button>
+
+  <script>
+    const chapters = [
+      `Chapter 1
+      Once upon a time in a faraway kingdom...`,
+      `Chapter 2
+      The adventure continues as...`,
+      `Chapter 3
+      The final battle begins...`
+    ];
+
+    let current = 0;
+
+    function renderChapter() {
+      document.getElementById('content').innerText = chapters[current];
+    }
+
+    function nextChapter() {
+      if (current < chapters.length - 1) {
+        current++;
+        renderChapter();
+      } else {
+        alert("You reached the end!");
+      }
+    }
+
+    renderChapter();
+  </script>
+</body>
+</html>
+
